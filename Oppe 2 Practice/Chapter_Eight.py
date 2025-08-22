@@ -187,13 +187,15 @@ class Dog:
         # Method = a function inside a class
         # This method makes the Dog bark
 
-        def bark(self):
-            return f"{self.name} says Woof!"
+    def bark(self):
+        return f"{self.name} says Woof!"
 
-        # Another method: tells dog's age in human years
+    def dog_age(self):
+        return self.age
 
-        def human_age(self):
-            return self.age * 7
+    # Another method: tells dog's age in human years
+    def human_age(self):
+        return self.age * 7
 
 # -----------------------------
 # Object
@@ -210,8 +212,10 @@ dog2 = Dog("Sheru", 5)  # Another Dog object with different data
 # Using Method
 # -----------------------------
 
-print(dog1.bark())  # Calls the bark() METHOD -> "Tommy says WOOF!"
-print(dog2.bark())
+print(dog1.bark())       # Calls the bark() METHOD → "Tommy says Woof!"
+print(dog2.bark())       # "Sheru says Woof!"
+print(dog1.dog_age())
+print(dog2.dog_age())
 
 print(dog1.human_age())
 print(dog2.human_age())
