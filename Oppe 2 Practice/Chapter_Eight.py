@@ -219,3 +219,11 @@ print(dog2.dog_age())
 
 print(dog1.human_age())
 print(dog2.human_age())
+
+
+
+# ------ Summary ------
+
+# CLASS  = Design/ Blueprint (Dog)
+# OBJECT = Actual copy created (dog1, dog2)
+# METHOD = Function inside the class (bark,human_age)
