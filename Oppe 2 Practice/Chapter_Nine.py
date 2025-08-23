@@ -15,7 +15,7 @@
 
 #     def speak(self):
 #         return f"{self.name} makes a sound."
-    
+
 
 # # -----------------------------
 # # Child class (inherits from Animal
@@ -30,7 +30,7 @@
 # class Cat(Animal):
 #     def speak(self):
 #         return f"{self.name} says Meow!"
-    
+
 
 # # -----------------------
 # # Using Inheritance
@@ -43,13 +43,11 @@
 # print(cat.speak())  # Kitty says  Meow !
 
 
-
 # Key things happening here:
 
 # 1. Dog and Cat inherit from Animal.
 # 2. They reuse __init__ from Animal (so no need to rewrite)
 # 3. They override speak() with their own version.
-
 
 
 # Mini Exercise for you:
@@ -59,6 +57,136 @@
 # 3. Each child should have its own method (car_sound() -> "Vroom", bike_sound()-> "Brrr!")
 
 
-Class Vehicle()
+# 1. Answers
 
-    def __init__(self, brand, year)
+# class Vehicle:
+
+#     def __init__(self, brand, year):
+
+#         self.brand = brand
+#         self.year = year
+
+#     def get_brand(self):
+#         return f"this is the brand name : {self.brand}"
+
+#     def get_year(self):
+#         return f"this is the brand year : {self.year}"
+
+
+# # object
+
+# car1 = Vehicle("Rolls Royce", 2023)
+# car2 = Vehicle("BMW", 2023)
+
+
+# # method
+
+# print(car1.get_brand())
+# print(car1.get_year())
+
+
+# # 2. Answers
+
+# class Vehicle:
+#     def __init__(self, name):
+#         self.name = name
+
+#         def speak(self):
+#             return f"this is the name {self.name}"
+
+
+# class Car(Vehicle):
+#     def speak(self):
+#         return f"this is the car name {self.name}"
+
+
+# class Bike(Vehicle):
+#     def speak(self):
+#         return f"this is the car name {self.name}"
+
+
+# # object
+
+
+# car = Car("BMW")
+# bike = Bike("Ola")
+
+
+# # method
+
+# print(car.speak())
+# print(bike.speak())
+
+
+# 3. Answer
+# Each child should have its own method (car_sound() -> "Vroom", bike_sound()-> "Brrr!")
+
+# class Vehicle:
+
+#     def __init__(self, name):
+#         self.name = name
+
+#         def speak(self):
+#             return f"this is the sound {self.name}"
+
+
+# class Car(Vehicle):
+
+#     def car_sound(self):
+#         return self.name
+
+
+# class Bike(Vehicle):
+
+#     def bike_sound(self):
+#         return self.name
+
+
+# # objects
+# car = Car("Vroom")
+# bike = Bike("Brrr")
+
+# # Method
+
+# print(car.car_sound())
+# print(bike.bike_sound())
+
+
+# Correct Version
+
+# class Vehicle:
+#     def __init__(self, brand, year):
+#         self.brand = brand
+#         self.year = year
+
+#     def info(self):
+#         return f"{self.brand}, Year: {self.year}"
+
+
+# # child class: car
+
+# class Car(Vehicle):
+#     def car_sound(self):
+#         return "Vroom!"
+
+
+# # Child class: bike
+
+
+# class Bike(Vehicle):
+#     def bike_sound(self):
+#         return "Brrr!"
+
+
+# # Objects (instances)
+# car = Car("BMW", 2023)
+# bike = Bike("Ola", 2024)
+
+
+# # Using Methods
+
+# print(car.info())
+# print(bike.info())
+
+# print(car.car_sound())
+# print(bike.bike_sound())
