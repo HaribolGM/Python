@@ -44,6 +44,8 @@ def is_prime(n: int) -> bool:
         d += 2
     return True
 
+# Create common divisor
+
 
 def gcd(a: int, b: int) -> int:
     """Greatest common divisor via Euclid's algorithm."""
