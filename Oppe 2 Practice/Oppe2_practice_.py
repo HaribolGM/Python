@@ -86,3 +86,58 @@ def merge_sorted(a: list[int], b: list[int]) -> list[int]:
     out.extend(a[i:])
     out.extend(b[i:])
     return out
+
+ # second method to solve this
+
+ return sorted(a + b)
+    
+
+# 4. Counting with Conditions
+
+def count_odd_three_digit(items: list[int | None]) -> int:
+    """Count how many values are odd three-digit numbers (ignore sign, skip None)."""
+
+    cnt = 0
+    for x in items:
+        if x is None:
+            continue
+    n = abs(int(x))
+    if 100 <= n <= 999 and n % 2 == 1:
+        cnt += 1
+    return cnt
+
+
+
+def count_perfect_squares(nums: list[int]) -> int:
+    """Count numbers that are perfect squares (n >= 0.)"""
+
+    import math
+    cnt = 0
+    for n in nums:
+        if n >= 0:
+            r = int(math.isqrt(n))
+            if r * r == n:
+                cnt += 1
+    return cnt
+    
+
+def count_names_start_with_vowel(names: list[str]) -> int:
+    """Count names whose first letter is a vowel (case-insensitive)."""
+    vowels = set('aeiou')
+    return sum(1 for name in names if name and name[0].lower() in vowels)
+
+
+# 5. Input / Output (Formatting) - typically console tasks 
+
+def name_to_initials(full_name: str) -> str:
+    """ "John Ronald Reuel Tolkien" -> "J. R. R. Tolkien"
+    Last word stays as last name; other becomes initials with '.' """
+
+    parts = [p for p in full_name.split() if p]
+    if not parts:
+        return ''
+    if len(parts) == 1:
+        return parts[0]
+    last = parts[-1]
+    initials = ' '.join([p[0].upper() + '.' for p in parts[:-1]])
+    return f"{initials}{last}"
